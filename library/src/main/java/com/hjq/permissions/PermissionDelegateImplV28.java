@@ -2,7 +2,7 @@ package com.hjq.permissions;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 /**
  *    author : Android 轮子哥

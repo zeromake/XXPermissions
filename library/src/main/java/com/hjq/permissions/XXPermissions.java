@@ -40,7 +40,7 @@ public final class XXPermissions {
         return with(fragment.getActivity());
     }
 
-    public static XXPermissions with(android.support.v4.app.Fragment fragment) {
+    public static XXPermissions with(androidx.fragment.app.Fragment fragment) {
         return with(fragment.getActivity());
     }
 
@@ -413,23 +413,23 @@ public final class XXPermissions {
 
     /* android.support.v4.app.Fragment */
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment) {
         startPermissionActivity(fragment, (List<String>) null);
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, String... permissions) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, String... permissions) {
         startPermissionActivity(fragment, PermissionUtils.asArrayList(permissions));
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, String[]... permissions) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, String[]... permissions) {
         startPermissionActivity(fragment, PermissionUtils.asArrayLists(permissions));
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, List<String> permissions) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, List<String> permissions) {
         startPermissionActivity(fragment, permissions, REQUEST_CODE);
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, List<String> permissions, int requestCode) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, List<String> permissions, int requestCode) {
         Activity activity = fragment.getActivity();
         if (activity == null) {
             return;
@@ -437,15 +437,15 @@ public final class XXPermissions {
         fragment.startActivityForResult(PermissionUtils.getSmartPermissionIntent(activity, permissions), requestCode);
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, String permission, OnPermissionPageCallback callback) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, String permission, OnPermissionPageCallback callback) {
         startPermissionActivity(fragment, PermissionUtils.asArrayList(permission), callback);
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, String[] permissions, OnPermissionPageCallback callback) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, String[] permissions, OnPermissionPageCallback callback) {
         startPermissionActivity(fragment, PermissionUtils.asArrayLists(permissions), callback);
     }
 
-    public static void startPermissionActivity(android.support.v4.app.Fragment fragment, List<String> permissions, OnPermissionPageCallback callback) {
+    public static void startPermissionActivity(androidx.fragment.app.Fragment fragment, List<String> permissions, OnPermissionPageCallback callback) {
         Activity activity = fragment.getActivity();
         if (activity == null || activity.isFinishing()) {
             return;
