@@ -1,16 +1,8 @@
 buildscript {
     repositories {
-        // 阿里云云效仓库：https://maven.aliyun.com/mvn/guide
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        // 华为开源镜像：https://mirrors.huaweicloud.com/
-        maven { url 'https://repo.huaweicloud.com/repository/maven/' }
-        // JitPack 远程仓库：https://jitpack.io
-        maven { url 'https://jitpack.io' }
-        mavenCentral()
+        gradlePluginPortal()
         google()
-        // noinspection JcenterRepositoryObsolete
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.2'
@@ -19,14 +11,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://repo.huaweicloud.com/repository/maven/' }
-        maven { url 'https://jitpack.io' }
-        mavenCentral()
         google()
-        // noinspection JcenterRepositoryObsolete
-        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     // 将构建文件统一输出到项目根目录下的 build 文件夹
